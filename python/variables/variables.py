@@ -29,3 +29,14 @@ email = "David@gmail.com"
 print(f"Hello {name}")
 print(f"You like {food}")
 print(f"Your email is: {email}")
+
+
+# BOOLEAN
+online = True
+for_sale = False
+running = False
+
+print(f"Are you online?: {online}")
+print(f"Is the item for sale?: {for_sale}")
+print(f"Game running: {running}")
+
