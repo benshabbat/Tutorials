@@ -24,7 +24,7 @@ print(f"The price is ${price}")
 # STRING
 name = "Bro"
 food = "pizza"
-email = "Bro123@gmail.com"
+email = "David@gmail.com"
 
 print(f"Hello {name}")
 print(f"You like {food}")
