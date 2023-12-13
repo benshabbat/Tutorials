@@ -19,3 +19,13 @@ price = 10.99
 print(f"Your gpa is {gpa}")
 print(f"You ran {distance}Km")
 print(f"The price is ${price}")
+
+
+# STRING
+name = "Bro"
+food = "pizza"
+email = "Bro123@gmail.com"
+
+print(f"Hello {name}")
+print(f"You like {food}")
+print(f"Your email is: {email}")
