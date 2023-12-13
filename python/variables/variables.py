@@ -22,7 +22,7 @@ print(f"The price is ${price}")
 
 
 # STRING
-name = "Bro"
+name = "David"
 food = "pizza"
 email = "David@gmail.com"
 
