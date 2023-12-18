@@ -14,4 +14,7 @@ res = pow(x, 2)
 
 # maximum value
 res = max(x,y,z)
+
+# minimum value
+res = min(x,y,z)
 print(res)
