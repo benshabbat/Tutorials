@@ -12,3 +12,6 @@ print(math.sqrt(x))
 
 # round up
 print(math.ceil(x))
+
+# round down
+print(math.floor(x))
