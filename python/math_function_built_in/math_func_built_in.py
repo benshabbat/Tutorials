@@ -9,5 +9,7 @@ res = round(y)
 # absolute value
 res = abs(x)
 
+# exponent 
+res = pow(x, 2)
 
 print(res)
