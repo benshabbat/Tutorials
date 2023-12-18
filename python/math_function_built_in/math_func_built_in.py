@@ -9,7 +9,9 @@ res = round(y)
 # absolute value
 res = abs(x)
 
-# exponent 
+# power of two 
 res = pow(x, 2)
 
+# maximum value
+res = max(x,y,z)
 print(res)
