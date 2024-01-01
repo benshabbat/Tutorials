@@ -4,7 +4,14 @@
 // 2. PROFESSIONAL WAY = HTML textbox
 
 // ------------------------- EASY WAY -------------------------
-let username = window.prompt("What's your username?");
+// let username = window.prompt("What's your username?");
 
-console.log(username);
+// console.log(username);
 
+// --------------------- PROFESSIONAL WAY ---------------------
+let username;
+
+document.getElementById("mySubmit").onclick = function(){
+    username = document.getElementById("myText").value;
+    document.getElementById("myH1").textContent = `Hello ${username}`
+}
