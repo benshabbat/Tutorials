@@ -9,9 +9,9 @@ age+=1;
 console.log(age, typeof age);
 
 // --------------- EXAMPLE 2 ---------------
-let x = "pizza";
-let y = "pizza";
-let z = "pizza";
+let x = "david";
+let y = "david";
+let z = "david";
 
 x = Number(x);
 y = String(y);
