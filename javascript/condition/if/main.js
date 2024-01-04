@@ -1,13 +1,10 @@
 // IF STATEMENTS = if a condition is true, execute some code
 //                                   if not, do something else
 
-const ageInput = document.getElementById("age");
+const age = document.getElementById("age");
 const submit = document.getElementById("submit");
 const res = document.getElementById("res");
-let age;
-submit.onclick = function () {
-  age = ageInput.value;
-  age = Number(age);
+submit.onclick = function (age) {
   if (age >= 100) {
     res.textContent = `You are TOO OLD to enter this site`;
   } else if (age == 0) {
