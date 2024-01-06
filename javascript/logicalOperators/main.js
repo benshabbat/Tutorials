@@ -26,3 +26,12 @@ else{
     console.log("The weather is GOOD");
 }
 
+// ---------- EXAMPLE 3 ----------
+const isSunny = true;
+
+if(!isSunny){
+    console.log("It is CLOUDY");
+}
+else{
+    console.log("It is SUNNY");
+}
