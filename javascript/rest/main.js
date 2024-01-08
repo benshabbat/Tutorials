@@ -5,6 +5,9 @@
 //                                  rest = bundles separate elements into an array
 
 // ------- EXAMPLE 1 -------
+function openFridgeArr(...foods) {
+  console.log(foods);
+}
 function openFridge(...foods) {
   console.log(...foods);
 }
@@ -47,7 +50,7 @@ function combineStrings(...strings) {
   return strings.join(" ");
 }
 function combineStringsToArray(...strings) {
-  return [...strings];
+  return strings;
 }
 
 const fullName = combineStrings("Mr.", "Spongebob", "Squarepants", "III");
