@@ -46,7 +46,12 @@ console.log(average);
 function combineStrings(...strings) {
   return strings.join(" ");
 }
+function combineStringsToArray(...strings) {
+  return [...strings];
+}
 
 const fullName = combineStrings("Mr.", "Spongebob", "Squarepants", "III");
+const arr = combineStringsToArray("Mr.", "Spongebob", "Squarepants", "III");
 
 console.log(fullName);
+console.log(arr);
