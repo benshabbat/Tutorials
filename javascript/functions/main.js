@@ -13,3 +13,9 @@ function happyBirthday(username, age){
 }
 //set arguments
 console.log(happyBirthday("David", 30));
+
+
+function add(x, y){
+  return x + y;
+}
+
