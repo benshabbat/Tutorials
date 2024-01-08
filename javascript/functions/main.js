@@ -23,3 +23,8 @@ function add(x, y){
 function subtract(x, y){
   return x - y;
 }
+
+//ex multiply
+function multiply(x, y){
+  return x * y;
+}
