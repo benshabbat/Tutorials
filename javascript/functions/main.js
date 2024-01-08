@@ -14,8 +14,12 @@ function happyBirthday(username, age){
 //set arguments
 console.log(happyBirthday("David", 30));
 
-
+//ex add
 function add(x, y){
   return x + y;
 }
 
+//ex subtract
+function subtract(x, y){
+  return x - y;
+}
