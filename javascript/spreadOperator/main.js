@@ -10,3 +10,9 @@ let minimum = Math.min(...numbers);
 
 console.log(maximum);
 
+// ------------ EXAMPLE 2 ------------
+let username = "Bro Code";
+let letters = [...username]; 
+
+console.log(letters);
+
