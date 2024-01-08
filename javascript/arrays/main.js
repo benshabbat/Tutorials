@@ -20,3 +20,20 @@ console.log(fruits[3]);
 console.log(numOfFruits);
 console.log(index);
 
+
+for(let i = 0; i < fruits.length; i++){
+    console.log(fruits[i]);
+}
+
+
+for(let i = fruits.length - 1; i >= 0; i--){
+    console.log(fruits[i]);
+}
+
+
+fruits.sort();
+fruits.sort().reverse();
+//short cut for
+for(let fruit of fruits){
+    console.log(fruit);
+}
