@@ -20,6 +20,7 @@ const food2 = "hamburger";
 const food3 = "hotdog";
 const food4 = "sushi";
 
+openFridgeArr(food1, food2, food3, food4);
 openFridge(food1, food2, food3, food4);
 
 const foods = getFood(food1, food2, food3, food4);
