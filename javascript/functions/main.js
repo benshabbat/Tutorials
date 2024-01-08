@@ -28,3 +28,22 @@ function subtract(x, y){
 function multiply(x, y){
   return x * y;
 }
+
+//ex divide
+function divide(x, y){
+  return x / y;
+}
+
+//ex if is even
+function isEven(number){
+
+  return number % 2 === 0 ? true : false;
+}
+
+//ex valid on email
+function isValidEmail(email){
+
+  return email.includes("@") ? true : false;
+}
+
+console.log(isValidEmail("David@gmail.com"));
