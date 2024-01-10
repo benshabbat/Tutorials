@@ -29,3 +29,7 @@ input{
 #dicesRes{
     margin: 25px;
 }
+#dicesImg{
+    width: 50px;
+    margin: 5px;
+}
