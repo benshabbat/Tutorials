@@ -13,5 +13,5 @@ function rollDices() {
     images.push(`<img src="images/dice${diceRandom}.png" alt="Dice ${diceRandom}">`);
   }
   dicesRes.textContent = dices;
-  dicesImg.innerHTML = images;
+  dicesImg.innerHTML = images.join("");
 }
