@@ -18,6 +18,7 @@ function generatePassword(length,includeLowercase,includeUppercase,includeNumber
   if (length <= 0) {
     return `(password length must be at least 1)`;
   }
+  // randomly generate if the user does not choose any options to be allowed
   if (allowedChars.length === 0) {
     allowedChars += lowercaseChars
     allowedChars += uppercaseChars
