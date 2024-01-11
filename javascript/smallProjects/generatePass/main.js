@@ -9,6 +9,7 @@ function generatePassword(length,includeLowercase,includeUppercase,includeNumber
   let allowedChars = "";
   let password = "";
 
+  //if is true concatenates to allow characters
   allowedChars += includeLowercase ? lowercaseChars : "";
   allowedChars += includeUppercase ? uppercaseChars : "";
   allowedChars += includeNumbers ? numberChars : "";
