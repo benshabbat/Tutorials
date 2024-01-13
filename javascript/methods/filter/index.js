@@ -44,3 +44,16 @@ function getShortWords(element){
 function getLongWords(element){
     return element.length > 6;
 }
+// ----------- EXAMPLE 4 -----------
+const numbers2 = [1, 2, 3, 4, 5, 6, 7];
+const evenNums2 = numbers.filter((num)=>{
+    return num % 2 === 0;
+});
+const oddNums2 = numbers.filter((num)=>{
+    return num % 2 !== 0;
+});
+
+console.log(evenNums2);
+console.log(oddNums2);
+
+
