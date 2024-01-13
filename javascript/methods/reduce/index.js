@@ -26,3 +26,12 @@ function getMax(accumulator, element){
 function getMin(accumulator, element){
     return Math.min(accumulator, element);
 }
+
+// ----------- EXAMPLE 3 -----------
+const prices2 = [5, 30, 10, 25, 15, 20];
+const total2 = prices.reduce((previous, next)=>{
+    return previous + next;
+});
+
+console.log(`$${total2.toFixed(2)}`);
+
