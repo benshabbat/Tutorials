@@ -15,4 +15,18 @@ function isEven(element){
 function isOdd(element){
     return element % 2 !== 0;
 }
+// ----------- EXAMPLE 2 -----------
+let ages = [16, 17, 17, 18, 19, 20, 65];
+let adults = ages.filter(isAdult);
+let children = ages.filter(isChild);
+
+console.log(children);
+
+function isAdult(element){
+    return element >= 18;
+}
+
+function isChild(element){
+    return element < 18;
+}
 
