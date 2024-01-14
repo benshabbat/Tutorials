@@ -9,7 +9,7 @@ const person1 = {
     lastName: "Benshabbat",
     age: 30,
     isEmployed: true,
-    sayHello: function(){console.log(`Hi! I am ${firstName}!`)},
+    sayHello: function(){console.log(`Hi! I am ${this.firstName}!`)},
     eat: function(){console.log("I am eating a vegetables")},
 }
 
@@ -18,7 +18,7 @@ const person2 = {
     lastName: "Benshabbat",
     age: 42,
     isEmployed: false,
-    sayHello: () => console.log(`Hey, I'm ${firstName}`),
+    sayHello: () => console.log(`Hey, I'm ${this.firstName}`),
     eat: () => console.log("I am eating pizza"),
 }
 
