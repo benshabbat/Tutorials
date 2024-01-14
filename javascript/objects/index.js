@@ -18,7 +18,7 @@ const person2 = {
     lastName: "Benshabbat",
     age: 42,
     isEmployed: false,
-    sayHello: () => console.log(`Hey, I'm ${this.firstName}`),
+    sayHello: () => console.log(`Hey, I'm Miriam`),
     eat: () => console.log("I am eating pizza"),
 }
 
