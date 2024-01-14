@@ -22,3 +22,32 @@ console.log(MathUtil.getDiameter(10));
 console.log(MathUtil.getCircumference(10));
 console.log(MathUtil.getArea(10));
 
+// ------------ EXAMPLE 2 ------------
+
+class User{
+
+    static userCount = 0;
+
+    constructor(username){
+        this.username = username;
+        User.userCount++;
+    }
+
+    static getUserCount(){
+        console.log(`There are ${User.userCount} users online`);
+    }
+    sayHello(){
+        console.log(`Hello, my username is ${this.username}`);
+    }
+}
+
+const user1 = new User("DavidChen");
+const user2 = new User("Miriam");
+const user3 = new User("Avishag");
+const user4 = new User("NehorayIzhack");
+
+user1.sayHello();
+user2.sayHello();
+user3.sayHello();
+user4.sayHello();
+User.getUserCount();
