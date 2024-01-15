@@ -16,3 +16,13 @@ console.log("Before Destructure B:"+b);
 console.log("After Destructure A:"+a);
 console.log("After Destructure B:"+b);
 
+
+// ---------- EXAMPLE 2 ----------
+// SWAP 2 ELEMENTS IN AN ARRAY
+
+const colors = ['red', 'green', 'blue', 'black', 'white'];
+
+[colors[0], colors[4]] = [colors[4], colors[0]]
+
+console.log(colors);
+
