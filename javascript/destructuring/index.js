@@ -26,7 +26,6 @@ console.log("Before Destructure :" + colors);
 
 console.log("After Destructure :" + colors);
 
-
 // ---------- EXAMPLE 3 ----------
 // ASSIGN ARRAY ELEMENTS TO VARIABLES
 
@@ -37,3 +36,5 @@ console.log(secondColor);
 console.log(thirdColor);
 console.log(extraColors);
 
+const colors2 = [firstColor, secondColor, thirdColor, ...extraColors];
+console.log(colors2);
