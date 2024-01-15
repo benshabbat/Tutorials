@@ -38,3 +38,31 @@ console.log(extraColors);
 
 const colors2 = [firstColor, secondColor, thirdColor, ...extraColors];
 console.log(colors2);
+
+// ---------- EXAMPLE 4 ----------
+// EXTRACT VALUES FROM OBJECTS
+
+const person1 = {
+  firstName: "DavidChen",
+  lastName: "Benshabbat",
+  age: 30,
+  job: "Software Developer",
+};
+
+const person2 = {
+  firstName: "Miriam",
+  lastName: "Benshabbat",
+  age: 28,
+  job: "Officer",
+};
+const person3 = {
+  firstName: "Avishag",
+  lastName: "Benshabbat",
+  age: 2,
+};
+
+const { firstName, lastName, age, job = "Unemployed" } = person3;
+
+console.log(firstName);
+console.log(lastName);
+console.log(age);
