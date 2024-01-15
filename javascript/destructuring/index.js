@@ -66,3 +66,16 @@ const { firstName, lastName, age, job = "Unemployed" } = person3;
 console.log(firstName);
 console.log(lastName);
 console.log(age);
+
+// ---------- EXAMPLE 5 ----------
+// DESTRUCTURING IN FUNCTION PARAMETERS
+
+function displayPerson({ firstName, lastName, age, job="Unemployed" }) {
+    console.log(`name: ${firstName} ${lastName}`);
+    console.log(`age: ${age}`);
+    console.log(`job: ${job}`);
+}
+
+displayPerson(person1);
+displayPerson(person2);
+displayPerson(person3);
