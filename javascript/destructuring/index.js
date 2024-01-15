@@ -20,8 +20,20 @@ console.log("After Destructure B:" + b);
 // SWAP 2 ELEMENTS IN AN ARRAY
 
 const colors = ["red", "green", "blue", "black", "white"];
-
 console.log("Before Destructure :" + colors);
+
 [colors[0], colors[4]] = [colors[4], colors[0]];
 
 console.log("After Destructure :" + colors);
+
+
+// ---------- EXAMPLE 3 ----------
+// ASSIGN ARRAY ELEMENTS TO VARIABLES
+
+const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
+
+console.log(firstColor);
+console.log(secondColor);
+console.log(thirdColor);
+console.log(extraColors);
+
