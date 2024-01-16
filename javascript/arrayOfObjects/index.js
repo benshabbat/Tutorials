@@ -12,3 +12,5 @@ console.log(fruits[0].calories);
 // Add a new fruit object
 fruits.push({ name: "grapes", color: "purple", calories: 62 });
 
+// Remove the last fruit object
+fruits.pop();
