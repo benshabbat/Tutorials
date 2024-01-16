@@ -27,5 +27,13 @@ people.sort((a, b) => b.gpa - a.gpa); //REVERSE
 people.sort((a, b) => a.name.localeCompare(b.name)); //FORWARD
 people.sort((a, b) => b.name.localeCompare(a.name)); //REVERSE
 
-people.sort()
+
+
 console.log(people);
+// ---------- EXAMPLE 1 ----------
+const strings = ["sss","bbb","fff","aaa"];
+
+strings.sort(); //FORWARD
+strings.reverse(); //REVERSE
+
+console.log(strings);
