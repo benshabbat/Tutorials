@@ -18,3 +18,8 @@ fruits.pop();
 // Remove fruit objects by indices
 fruits.splice(1, 2);
 
+// ---------- forEach() ----------
+fruits.forEach((fruit) => console.log(fruit));
+fruits.forEach((fruit) => console.log(fruit.name));
+fruits.forEach((fruit) => console.log(fruit.color));
+fruits.forEach((fruit) => console.log(fruit.calories));
