@@ -23,3 +23,14 @@ fruits.forEach((fruit) => console.log(fruit));
 fruits.forEach((fruit) => console.log(fruit.name));
 fruits.forEach((fruit) => console.log(fruit.color));
 fruits.forEach((fruit) => console.log(fruit.calories));
+
+// ---------- map() ----------
+const fruitNames = fruits.map((fruit) => fruit.name);
+const fruitColors = fruits.map((fruit) => fruit.color);
+const fruitCalories = fruits.map((fruit) => fruit.calories);
+
+console.log(fruitNames);
+console.log(fruitColors);
+console.log(fruitCalories);
+
+
