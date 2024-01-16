@@ -14,3 +14,7 @@ fruits.push({ name: "grapes", color: "purple", calories: 62 });
 
 // Remove the last fruit object
 fruits.pop();
+
+// Remove fruit objects by indices
+fruits.splice(1, 2);
+
