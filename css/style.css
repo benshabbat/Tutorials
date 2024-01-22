@@ -8,9 +8,14 @@
     place-items: center; */
 
 
-    /* E */
+    /* Ex 2 */
+    position: relative;
 }
 
 .child{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
     
 }
