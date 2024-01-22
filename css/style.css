@@ -4,18 +4,23 @@
     height: 200px;
 
     /* Ex 1 */
+    /* position: relative; */
+    
+    
+    /* Ex 2 */
     /* display: grid;
     place-items: center; */
 
-
-    /* Ex 2 */
-    position: relative;
+    /* Ex 3 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.child{
+/* .child{
     position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50% ,-50%);
     
-}
+} */
