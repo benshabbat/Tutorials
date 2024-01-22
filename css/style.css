@@ -1,0 +1,16 @@
+.parent{
+    border: 2px solid blue;
+    width: 200px;
+    height: 200px;
+
+    /* Ex 1 */
+    /* display: grid;
+    place-items: center; */
+
+
+    /* E */
+}
+
+.child{
+    
+}
