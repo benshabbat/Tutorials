@@ -1,0 +1,62 @@
+:root {
+  --height-navbar: 50px;
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+.navbar {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  height: var(--height-navbar);
+  width: 100%;
+  background-color: red;
+}
+.main {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin-top: var(--heigh-navbar);
+  top: 50%;
+  left: 50%;
+}
+
+.parent {
+  border: 2px solid green;
+  width: 400px;
+  height: 400px;
+
+  /* display:grid;
+  place-items: center; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position: relative; */
+}
+
+.child {
+  /* position: absolute;
+  transform: translate(-50%, -50%); */
+  /* margin-top: var(--heigh-navbar); */
+  /* top: 50%;
+  left: 50%; */
+  border: 2px solid blue;
+  /* width: 100%;
+  height: 100%; */
+  width: 50px;
+  height: 50px;
+}
+.child1 {
+  position: absolute;
+  border: 2px solid blue;
+  /* width: 100%; */
+  width: 70px;
+  height: 70px;
+}
+.child2 {
+  position: absolute;
+  border: 2px solid blue;
+  /* width: 100%; */
+  width: 90px;
+  height: 90px;
+}
