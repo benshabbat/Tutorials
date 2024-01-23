@@ -8,19 +8,24 @@
     
     
     /* Ex 2 */
-    /* display: grid;
-    place-items: center; */
-
-    /* Ex 3 */
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    
+    /* Ex 3 */
+    display:grid;
+    place-items: center;
 }
 
-/* .child{
-    position:absolute;
+.child{
+    /* position:absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% ,-50%);
-    
-} */
+    transform: translate(-50% ,-50%); */
+    display: grid;
+    place-items: center;
+    border: 2px solid blue;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
