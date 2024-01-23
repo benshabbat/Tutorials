@@ -1,0 +1,14 @@
+
+
+#clock-container{
+    display: flex;
+    place-items: center; 
+    height: 100vh;
+}
+#clock{
+    display: grid;
+    place-items: center; 
+    width: 100%;
+    font-size: 5.4rem;
+    border: solid 2px;
+}
