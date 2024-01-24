@@ -4,11 +4,11 @@
 //                            setTimeout(callback, delay);
 
 // ---------- EXAMPLE 1 ----------
-function hello() {
-    window.alert("Hello");
-}
+// function hello() {
+//     window.alert("Hello");
+// }
  
-setTimeout(hello, 3000);
+// setTimeout(hello, 3000);
 
 // ---------- EXAMPLE 2 ----------
 // clearTimeout() = can cancel a timeout before it triggers
@@ -30,7 +30,7 @@ function startTimer() {
     console.log("STARTED");
 }
 
-function clearTime() {
+function clearTimer() {
     clearTimeout(timeoutId);
     console.log("CLEARED");
 }
