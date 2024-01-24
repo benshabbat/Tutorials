@@ -24,6 +24,7 @@ body {
   width: 80px;
   border-radius: 15%;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 #startBtn {
   background-color: rgb(105, 201, 105);
