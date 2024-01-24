@@ -10,3 +10,9 @@ function hello() {
  
 setTimeout(hello, 3000);
 
+// ---------- EXAMPLE 2 ----------
+// clearTimeout() = can cancel a timeout before it triggers
+
+const timeoutId = setTimeout(() => window.alert("Hello"), 3000);
+
+clearTimeout(timeoutId);
