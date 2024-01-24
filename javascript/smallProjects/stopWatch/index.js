@@ -9,6 +9,7 @@ let isRunning = false;
 function start(){
     if(!isRunning){
         startTime = Date.now() - elapsedTime;
+        console.log(startTime,elapsedTime);
         timer = setInterval(update, 10);
         isRunning = true;
     }
@@ -18,6 +19,7 @@ function stop(){
     if(isRunning){
         clearInterval(timer);
         elapsedTime = Date.now() - startTime;
+        console.log(elapsedTime,startTime);
         isRunning = false;
     }
 }
@@ -43,7 +45,7 @@ function update(){
     display.textContent = time;
 
     //ex2
-    
+
     // hours = String(hours).padStart(2, "0");
     // minutes = String(minutes).padStart(2, "0");
     // seconds = String(seconds).padStart(2, "0");
