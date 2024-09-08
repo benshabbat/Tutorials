@@ -13,7 +13,7 @@ console.log(maximum);
 
 // ------------ EXAMPLE 2 ------------
 //array of characters
-let username = "Bro Code";
+let username = "David Benshabbat";
 let letters = [...username]; 
 
 console.log(letters);
