@@ -1,5 +1,5 @@
 // RANDOM NUMBER GENERATOR
-const max = 6;
+const max = 4;
 const min = 1;
 document.getElementById("rollBtn").onclick = () => {
    //Random 1-6 numbers 

@@ -40,10 +40,12 @@ function isEven(number){
   return number % 2 === 0 ? true : false;
 }
 
+
 //ex valid on email
 function isValidEmail(email){
 
-  return email.includes("@") ? true : false;
+  // return email.includes("@") ? true : false;
+  return email.includes("@");
 }
 
 console.log(isValidEmail("David@gmail.com"));
