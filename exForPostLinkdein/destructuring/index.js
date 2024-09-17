@@ -1,83 +1,59 @@
-// destructuring =  extract values from arrays and objects,
-//                              then assign them to variables in a convenient way
-//                              [] = to perform array destructuring
-//                              {} = to perform object destructuring
-
-// ---------- EXAMPLE 1 ----------
-// SWAP THE VALUE OF TWO VARIABLES
-
+// Example 1
+// This demonstrates how destructuring can be used to swap values without a temporary variable
 let a = 1;
 let b = 2;
-console.log("Before Destructure A:" + a);
-console.log("Before Destructure B:" + b);
+console.log(a); 
+console.log(b);
 [a, b] = [b, a];
-console.log("After Destructure A:" + a);
-console.log("After Destructure B:" + b);
+console.log(a);
+console.log(b);
 
-// ---------- EXAMPLE 2 ----------
-// SWAP 2 ELEMENTS IN AN ARRAY
+// Example 2
+// This shows how to use destructuring to swap elements within an array
 
 const colors = ["red", "green", "blue", "black", "white"];
-console.log("Before Destructure :" + colors);
+console.log(colors);
+
+// Swap first and last elements using destructuring
 [colors[0], colors[4]] = [colors[4], colors[0]];
-console.log("After Destructure :" + colors);
+console.log(colors);
 
-// ---------- EXAMPLE 3 ----------
-// ASSIGN ARRAY ELEMENTS TO VARIABLES
-
+// Example 3
+// This demonstrates array destructuring and the rest operator
 const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
-
 console.log(firstColor);
 console.log(secondColor);
 console.log(thirdColor);
 console.log(extraColors);
 
-const colors2 = [firstColor, secondColor, thirdColor, ...extraColors];
+// Create a new array using destructured variables and the spread operator
+const colors2 = [secondColor, firstColor, thirdColor, ...extraColors];
 console.log(colors2);
 
-// ---------- EXAMPLE 4 ----------
-// EXTRACT VALUES FROM OBJECTS
-
-const person1 = {
-  firstName: "David-Chen",
-  lastName: "Benshabbat",
-  age: 30,
-  job: "Software Developer",
-};
-
-const person2 = {
-  firstName: "Miriam",
-  lastName: "Benshabbat",
-  age: 29,
-  job: "Officer",
-};
-const person3 = {
-  firstName: "Avishag",
-  lastName: "Benshabbat",
-  age: 3,
-};
-const person4 = {
-  firstName: "Nehoray-Izhack",
-  lastName: "Benshabbat",
-  age: 1,
-};
-
-const { firstName, lastName, age, job = "Unemployed" } = person3;
+// Example 4
+// This shows object destructuring with default values
+const person1 = { firstName: "Joseph", lastName: "Cohen", age: 35, occupation: "Teacher" };
+const person2 = { firstName: "Rachel", lastName: "Levy", age: 28, occupation: "Doctor" };
+const person3 = { firstName: "Daniel", lastName: "Goldstein", age: 5 };
+// Destructure person3 object with a default value for 'occupation'
+const { firstName, lastName, age, occupation = "Unemployed" } = person3;
 
 console.log(firstName);
 console.log(lastName);
 console.log(age);
+console.log(job);
 
-// ---------- EXAMPLE 5 ----------
-// DESTRUCTURING IN FUNCTION PARAMETERS
+// Example 5
+// This demonstrates how to use destructuring in function parameters
 
-function displayPerson({ firstName, lastName, age, job="Unemployed" }) {
-    console.log(`name: ${firstName} ${lastName}`);
-    console.log(`age: ${age}`);
-    console.log(`job: ${job}`);
+// Create an array of person objects
+const persons = [person1, person2, person3];
+
+function displayPerson({ firstName, lastName, age, occupation = "Unemployed" }) {
+  console.log(`name: ${firstName} ${lastName}`);
+  console.log(`age: ${age}`);
+  console.log(`occupation: ${occupation}`);
 }
 
-displayPerson(person1);
-displayPerson(person2);
-displayPerson(person3);
-displayPerson(person4);
+// Use forEach to call displayPerson for each person in the persons array
+persons.forEach((person) => displayPerson(person));
