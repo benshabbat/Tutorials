@@ -8,11 +8,9 @@
 
 let a = 1;
 let b = 2;
-
 console.log("Before Destructure A:" + a);
 console.log("Before Destructure B:" + b);
 [a, b] = [b, a];
-
 console.log("After Destructure A:" + a);
 console.log("After Destructure B:" + b);
 
@@ -21,9 +19,7 @@ console.log("After Destructure B:" + b);
 
 const colors = ["red", "green", "blue", "black", "white"];
 console.log("Before Destructure :" + colors);
-
 [colors[0], colors[4]] = [colors[4], colors[0]];
-
 console.log("After Destructure :" + colors);
 
 // ---------- EXAMPLE 3 ----------
@@ -43,7 +39,7 @@ console.log(colors2);
 // EXTRACT VALUES FROM OBJECTS
 
 const person1 = {
-  firstName: "DavidChen",
+  firstName: "David-Chen",
   lastName: "Benshabbat",
   age: 30,
   job: "Software Developer",
@@ -52,13 +48,18 @@ const person1 = {
 const person2 = {
   firstName: "Miriam",
   lastName: "Benshabbat",
-  age: 28,
+  age: 29,
   job: "Officer",
 };
 const person3 = {
   firstName: "Avishag",
   lastName: "Benshabbat",
-  age: 2,
+  age: 3,
+};
+const person4 = {
+  firstName: "Nehoray-Izhack",
+  lastName: "Benshabbat",
+  age: 1,
 };
 
 const { firstName, lastName, age, job = "Unemployed" } = person3;
@@ -79,3 +80,4 @@ function displayPerson({ firstName, lastName, age, job="Unemployed" }) {
 displayPerson(person1);
 displayPerson(person2);
 displayPerson(person3);
+displayPerson(person4);
