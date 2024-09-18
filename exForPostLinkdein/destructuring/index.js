@@ -41,7 +41,7 @@ const { firstName, lastName, age, occupation = "Unemployed" } = person3;
 console.log(firstName);
 console.log(lastName);
 console.log(age);
-console.log(job);
+console.log(occupation);
 
 // Example 5
 // This demonstrates how to use destructuring in function parameters
