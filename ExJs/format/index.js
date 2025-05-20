@@ -26,3 +26,14 @@ form.addEventListener("submit", (e) => {
   console.log("email" + checkEmail(email));
   print(firstName, email, password, confirmPassword);
 });
+
+form.onsubmit = (e) => {
+  e.preventDefault();
+  const firstName = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+  console.log("pass:" + checkConfirmPassword(password, confirmPassword));
+  console.log("email" + checkEmail(email));
+  print(firstName, email, password, confirmPassword);
+};
