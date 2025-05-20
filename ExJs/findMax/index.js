@@ -1,36 +1,13 @@
-// הקוד הבא אמור להחזיר את המספר הגדול ביותר במערך
-// אך יש בו באג. מצא ותקן את הבאג
+const arr = [
+  [4, 2, 2, 4],
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+];
 
-function findMax(numbers) {
-  let max = 0;
-  
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > max) {
-      max = numbers[i];
-    }
-  }
-  
-  return max;
+function sumTeams(arr) {
+  return arr.map((team) => {
+    return team.reduce((acc, num) => acc + num, 0);
+  });
 }
-// הפונקציה אמורה להחזיר 5 עבור [1, 3, 5, 2, 4]
-// ו-10 עבור [-5, 0, 10, -2]
-console.log(findMax([1, 3, 5, 2, 4])); // 5
-console.log(findMax([-5, 0, 10, -2])); // 10
 
-function findMaxFix(numbers) {
-  let max = numbers.length>0 ? numbers[0] : -Infinity;
-  // אם המערך ריק, מחזירים -Infinity
-  // אם המערך לא ריק, מחזירים את המספר הראשון במערך
-  // וממשיכים לבדוק את שאר המספרים במערך
-  
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > max) {
-      max = numbers[i];
-    }
-  }
-  
-  return max;
-}
-function findMax(numbers) {
-  return numbers.length > 0 ? Math.max(...numbers) : -Infinity;
-}
+console.log(sumTeams(arr));
