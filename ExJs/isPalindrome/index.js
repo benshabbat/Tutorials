@@ -26,3 +26,4 @@ function isPalindromeFix(str) {
 
 console.log(isPalindrome(str));
 console.log(isPalindromeFix(str));
+console.log(typeof []);
