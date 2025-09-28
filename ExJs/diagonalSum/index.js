@@ -20,4 +20,6 @@ const matrix = [
     return sum;
   }
   
-  console.log(diagonalSum(matrix)); // פלט: 25
+  // console.log(diagonalSum(matrix)); // פלט: 25
+
+  console.log(1+true* "12" / "01" *10) ;
