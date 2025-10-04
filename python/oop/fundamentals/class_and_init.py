@@ -4,14 +4,14 @@ class Dog:
         self.breed = breed
 
     def bark(self):
-        return f"{self.name} says woof!"
+        return print(f"{self.name} says woof!")
 
 dog1 = Dog("Buddy", "Golden Retriever")
-print(dog1.bark())
+dog1.bark()
 print(dog1.name)
 print(dog1.breed)
 
 dog2 = Dog("Max", "Beagle")
-print(dog2.bark())
+dog2.bark()
 print(dog2.name)
 print(dog2.breed)
