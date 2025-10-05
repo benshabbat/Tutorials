@@ -191,3 +191,21 @@
 #     if x % 2 == 0:
 #         items.remove(x)
 # print(items)
+
+# TypeError: 'list' object is not callable
+# Shadowing a builtin – unexpected errors later
+# list = [1, 2, 3]
+# print(list( ("a", "b") ))
+
+# RESULT:
+# my_list = [1, 2, 3]
+# print(list( ("a", "b") ))
+
+# Missing import – using a module without importing it
+# import logging
+# logging.debug("Start")   # Why no output?
+
+# RESULT:
+import logging
+logging.basicConfig(level=logging.DEBUG)  
+logging.debug("Start")   # Now it works
