@@ -1,6 +1,5 @@
                   
 # NameError: name 'username' is not defined
-
 # def greet():
 #     return f"Hello, {username}!"
 # print(greet())
@@ -9,6 +8,9 @@
 # def greet(username):
 #     return f"Hello, {username}!"
 # print(greet("David"))
+
+
+
 
 # UnboundLocalError: cannot access local variable 'count' 
 # where it is not associated with a value
@@ -27,6 +29,9 @@
 # print(bump())
 
 
+
+
+
 # AttributeError: 'str' object has no attribute 'push'
 # text = "debugging"
 # print(text.push("!"))
@@ -34,6 +39,9 @@
 # RESULT:
 # text = "debugging"
 # print(text + "!")
+
+
+
 
 # IndexError: list index out of range
 # nums = [1, 2, 3]
@@ -45,6 +53,9 @@
 # for i in range(0, len(nums)):
 #     print(nums[i])
 
+
+
+
 # KeyError: 'username'
 # config = {"host": "localhost", "port": 5432}
 # print(config["username"])
@@ -52,6 +63,8 @@
 # RESULT:
 # config = {"host": "localhost", "port": 5432}
 # print(config["host"])
+
+
 
 
 # TypeError: can only concatenate str (not "int") to str
@@ -63,6 +76,8 @@
 # print(age + "5")
 
 
+
+
 # ValueError: invalid literal for int() with base 10: '12.5'
 # user_input = "12.5"
 # print(int(user_input))
@@ -70,6 +85,8 @@
 # RESULT:
 # user_input = "12.5"
 # print(float(user_input))
+
+
 
 # ZeroDivisionError: division by zero
 # def ratio(a, b):
@@ -83,6 +100,7 @@
 #         return "Error: Division by zero is not allowed."
 #     return a / b
 # print(ratio(10, 0))
+
 
 
 # FileNotFoundError: [Errno 2] No such file or directory: 'data.csv'
@@ -108,6 +126,8 @@
 #     # now read the newly created file
 #     with open("data.csv") as f:
 #         print("First line:", f.readline().strip())
+   
+   
     
 # ModuleNotFoundError: No module named 'jsonn'
 # import jsonn
@@ -116,6 +136,8 @@
 # RESULT:
 # import json
 # print(json.dumps({"ok": True}))
+
+
 
 # RecursionError: maximum recursion depth exceeded
 # def down(n):
@@ -129,6 +151,8 @@
 #     return down(n - 1)
 # print(down(5))
 
+
+
 # Infinite loop – loop condition never changes
 # x = 5
 # while x > 0:
@@ -140,6 +164,8 @@
 # while x > 0:
 #     print(x)
 #     x -= 1    
+
+
 
 # Mutable Default Argument
 # def add_item(item, bucket=[]):
@@ -159,6 +185,8 @@
 # print(add_item("b"))
 
 
+
+
 # Late binding in closures – all functions print same value
 # funcs = []
 # for i in range(3):
@@ -167,6 +195,8 @@
 # for f in funcs:
 #     f()  # Expected 0,1,2; what happens?
 #    # Prints: 2 2 2
+
+
 
 # # RESULT:
 # funcs = []
@@ -192,6 +222,8 @@
 #         items.remove(x)
 # print(items)
 
+
+
 # TypeError: 'list' object is not callable
 # Shadowing a builtin – unexpected errors later
 # list = [1, 2, 3]
@@ -201,11 +233,56 @@
 # my_list = [1, 2, 3]
 # print(list( ("a", "b") ))
 
+
+
 # Missing import – using a module without importing it
 # import logging
 # logging.debug("Start")   # Why no output?
 
 # RESULT:
-import logging
-logging.basicConfig(level=logging.DEBUG)  
-logging.debug("Start")   # Now it works
+# import logging
+# logging.basicConfig(level=logging.DEBUG)  
+# logging.debug("Start")   # Now it works
+
+
+
+# Wrong operator precedence – logic bug, no exception
+# a, b, c = True, False, True
+# if a and b or c == True:
+#     print("Pass")
+# else:
+#     print("Fail")
+
+# # RESULT:
+# a, b, c = True, False, True
+# if a and (b or c):
+#     print("Pass")
+# else:
+#     print("Fail")
+
+
+
+
+# f-string with missing variable – runtime NameError
+# name = "Avi"
+# print(f"User: {full_name}")
+
+# RESULT:
+# name = "Avi"
+# print(f"User: {name}")
+
+
+
+# Off-by-one in range – last element never processed
+# data = [10, 20, 30, 40]
+# total = 0
+# for i in range(len(data) - 1):
+#     total += data[i]
+# print("Total:", total)  # Why is 40 missing?
+
+# RESULT:
+# data = [10, 20, 30, 40]
+# total = 0
+# for i in range(len(data)):
+#     total += data[i]
+# print("Total:", total)
