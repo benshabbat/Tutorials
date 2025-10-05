@@ -68,5 +68,51 @@
 # print(int(user_input))
 
 # RESULT:
-user_input = "12.5"
-print(float(user_input))
+# user_input = "12.5"
+# print(float(user_input))
+
+# ZeroDivisionError: division by zero
+# def ratio(a, b):
+#     return a / b
+# print(ratio(10, 0))
+
+
+# RESULT:
+# def ratio(a, b):
+#     if b == 0:
+#         return "Error: Division by zero is not allowed."
+#     return a / b
+# print(ratio(10, 0))
+
+
+# FileNotFoundError: [Errno 2] No such file or directory: 'data.csv'
+# with open("data.csv") as f:
+#     print(f.readline())
+
+# RESULT:
+# import os
+
+# try:
+#     with open("data.csv") as f:
+#         print(f.readline())
+# except FileNotFoundError:
+#     print("File 'data.csv' not found. Creating it now...")
+#     # created a CSV file with sample data
+#     with open("data.csv", "w") as f:
+#         f.write("name,age,city\n")
+#         f.write("David,25,Tel Aviv\n")
+#         f.write("Sarah,30,Jerusalem\n")
+#         f.write("Michael,28,Haifa\n")
+#     print("File created successfully!")
+    
+#     # now read the newly created file
+#     with open("data.csv") as f:
+#         print("First line:", f.readline().strip())
+    
+# ModuleNotFoundError: No module named 'jsonn'
+# import jsonn
+# print(json.dumps({"ok": True}))
+
+# RESULT:
+# import json
+# print(json.dumps({"ok": True}))
