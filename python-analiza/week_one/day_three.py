@@ -5,10 +5,10 @@
 #     return f"Hello, {username}!"
 # print(greet())
 
-
-def greet(username):
-    return f"Hello, {username}!"
-print(greet("David"))
+# RESULT:
+# def greet(username):
+#     return f"Hello, {username}!"
+# print(greet("David"))
 
 # UnboundLocalError: cannot access local variable 'count' 
 # where it is not associated with a value
@@ -18,10 +18,30 @@ print(greet("David"))
 #     return count
 # print(bump())
 
+# RESULT:
+# count = 10
+# def bump():
+#     global count
+#     count += 1
+#     return count
+# print(bump())
 
-count = 10
-def bump():
-    global count
-    count += 1
-    return count
-print(bump())
+
+# AttributeError: 'str' object has no attribute 'push'
+# text = "debugging"
+# print(text.push("!"))
+
+# RESULT:
+# text = "debugging"
+# print(text + "!")
+
+# IndexError: list index out of range
+# nums = [1, 2, 3]
+# for i in range(0, len(nums)):
+#     print(nums[i + 1])
+
+# RESULT:
+# nums = [1, 2, 3]
+# for i in range(0, len(nums)):
+#     print(nums[i])
+
