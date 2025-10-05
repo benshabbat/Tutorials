@@ -116,3 +116,15 @@
 # RESULT:
 # import json
 # print(json.dumps({"ok": True}))
+
+# RecursionError: maximum recursion depth exceeded
+# def down(n):
+#     return down(n - 1)
+# print(down(5))
+
+# RESULT:
+# def down(n):
+#     if n <= 0:
+#         return "Done"
+#     return down(n - 1)
+# print(down(5))
