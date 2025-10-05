@@ -158,3 +158,36 @@
 # print(add_item("a"))
 # print(add_item("b"))
 
+
+# Late binding in closures – all functions print same value
+# funcs = []
+# for i in range(3):
+#     funcs.append(lambda: print(i))
+
+# for f in funcs:
+#     f()  # Expected 0,1,2; what happens?
+#    # Prints: 2 2 2
+
+# # RESULT:
+# funcs = []
+# for i in range(3):
+#     funcs.append(lambda i=i: print(i))
+
+# for f in funcs:
+#     f()  # Prints: 0 1 2
+
+
+
+# Modifying a list while iterating – skipped elements
+# items = [1, 2, 3, 4, 5]
+# for x in items:
+#     if x % 2 == 0:
+#         items.remove(x)
+# print(items)
+
+# RESULT:
+# items = [1, 2, 3, 4, 5]
+# for x in items[:]:
+#     if x % 2 == 0:
+#         items.remove(x)
+# print(items)
