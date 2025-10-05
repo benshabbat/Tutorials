@@ -68,4 +68,16 @@ def matrix_sum(size):
     print("Sum:", sum)
    
    
-matrix_sum(3)
+# matrix_sum(3)
+
+def main():
+    matrix(3)
+    triangle(4)
+    triangle_stars(5)
+    matrix_slanted(5)
+    matrix_chessboard(5)
+    matrix_sum(3)
+    
+if __name__ == "__main__":
+    main()  
+    
