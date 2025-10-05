@@ -128,3 +128,33 @@
 #         return "Done"
 #     return down(n - 1)
 # print(down(5))
+
+# Infinite loop – loop condition never changes
+# x = 5
+# while x > 0:
+#     print(x)
+# # x never changes
+
+# RESULT:
+# x = 5
+# while x > 0:
+#     print(x)
+#     x -= 1    
+
+# Mutable Default Argument
+# def add_item(item, bucket=[]):
+#     bucket.append(item)
+#     return bucket
+
+# print(add_item("a"))
+# print(add_item("b"))
+
+# RESULT:
+# def add_item(item, bucket=None):
+#     if bucket is None:
+#         bucket = []
+#     bucket.append(item)
+#     return bucket
+# print(add_item("a"))
+# print(add_item("b"))
+
