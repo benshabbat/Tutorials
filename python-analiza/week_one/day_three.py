@@ -45,3 +45,28 @@
 # for i in range(0, len(nums)):
 #     print(nums[i])
 
+# KeyError: 'username'
+# config = {"host": "localhost", "port": 5432}
+# print(config["username"])
+
+# RESULT:
+# config = {"host": "localhost", "port": 5432}
+# print(config["host"])
+
+
+# TypeError: can only concatenate str (not "int") to str
+# age = "12"
+# print(age + 5)
+
+# RESULT:
+# age = "12"
+# print(age + "5")
+
+
+# ValueError: invalid literal for int() with base 10: '12.5'
+# user_input = "12.5"
+# print(int(user_input))
+
+# RESULT:
+user_input = "12.5"
+print(float(user_input))
