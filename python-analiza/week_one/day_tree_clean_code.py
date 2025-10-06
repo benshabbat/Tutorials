@@ -64,6 +64,7 @@
 #     if age >= 65:
 #         print("Senior")
 
+# process_user(("Alice", 70))
 
 # RESULT:
 
