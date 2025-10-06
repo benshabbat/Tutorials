@@ -23,3 +23,9 @@
 # radius = 5
 # area = pi * (radius**2)
 # print(f"Area of the circle with radius {radius}: {area}")
+
+# import string_utils
+# test_string = "racecar"
+# reversed_str = string_utils.reverse_string(test_string)
+# print(f"Reversed string: {reversed_str}")
+# print(f"Is '{test_string}' a palindrome? {string_utils.is_palindrome(test_string)}")
