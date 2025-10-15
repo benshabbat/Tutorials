@@ -187,6 +187,7 @@ def run_cli(logs_dicts: list[dict]) -> None:
         print("2) Top service by errors")
         print("3) Filter logs manually")
         print("4) Exit")
+        num = input("Choose an option (1-4): ").strip()
         if num == '1':
             counts = count_by_level(logs_dicts)
             print("Log counts by level:")
