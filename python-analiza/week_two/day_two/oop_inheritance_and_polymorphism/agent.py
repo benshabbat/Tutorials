@@ -1,3 +1,5 @@
+
+
 class Agent:
     def __init__(self, code_name:str , clearance_level : int = 0):
         self.code_name = code_name
@@ -18,11 +20,7 @@ class Agent:
         print(f"Current clearance level: {self._clearance_level}")
         return self._clearance_level
     
-    
-ag = Agent("Eagle", 3)
-ag.report()
-ag.set_clearance_level(4)
-print(ag.get_clearance_level())
+
 
 
 
