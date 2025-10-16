@@ -28,6 +28,7 @@ dicts = [
     "2025-10-08T06:41:00Z;db;ERROR;user login ok",
     "2025-10-08T06:41:00Z;db;ERROR;user login ok",
     "2025-10-08T06:41:00Z;db;ERROR;user login ok",
+    "2025-10-08T06:41:00Z;db;WARN;user login ok",
     "2025-10-08T06:41:00Z;db;ERROR;user login ok",
     "2025-10-08T06:41:00Z;api;ERROR;user login ok",
 
@@ -230,26 +231,24 @@ def errors_by_service(logs_dicts: list[dict]) -> dict[str, int]:
 # print(errors_by_service(logs))
 
 def worst_service_ratio(logs_dicts: list[dict]) -> tuple[str, float] | None:
+    service_errors = errors_by_service(logs_dicts)
     service_totals = {}
-    service_errors = {}
 
     for log in logs_dicts:
         service = log.get("service")
-        level = log.get("level")
 
         if service not in service_totals:
             service_totals[service] = 0
-            service_errors[service] = 0
-
-        service_totals[service] += 1
-        if level == "ERROR":
-            service_errors[service] += 1
-
+        service_totals[service] += 1  
+    # print(service_totals)
+    # print(service_errors)
     worst_service = None
     worst_ratio = -1.0
 
     for service, total in service_totals.items():
         errors = service_errors.get(service, 0)
+        # print(errors)
+        # print(total)
         ratio = errors / total if total > 0 else 0
 
         if ratio > worst_ratio:
@@ -257,5 +256,6 @@ def worst_service_ratio(logs_dicts: list[dict]) -> tuple[str, float] | None:
             worst_service = service
 
     return (worst_service, worst_ratio) if worst_service else None
+
 print(worst_service_ratio(logs))
-# ➜ ('db', 0.75)  # כלומר 75% מהלוגים של db הם ERROR
+# FUNCTION TWO
