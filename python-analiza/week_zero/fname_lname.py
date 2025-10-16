@@ -230,6 +230,9 @@ def errors_by_service(logs_dicts: list[dict]) -> dict[str, int]:
 
 # print(errors_by_service(logs))
 
+
+# FUNCTION TWO
+
 def worst_service_ratio(logs_dicts: list[dict]) -> tuple[str, float] | None:
     service_errors = errors_by_service(logs_dicts)
     service_totals = {}
@@ -258,4 +261,16 @@ def worst_service_ratio(logs_dicts: list[dict]) -> tuple[str, float] | None:
     return (worst_service, worst_ratio) if worst_service else None
 
 print(worst_service_ratio(logs))
-# FUNCTION TWO
+
+
+
+# FUNCTION THREE
+def sort_by_severity(logs_dicts: list[dict]) -> list[dict]:
+    severity_order = {'ERROR': 1, 'WARN': 2, 'INFO': 3}
+    logs_dicts = [log for log in logs_dicts if log['level'] in severity_order]
+    return sorted(logs_dicts, key=lambda log: severity_order.get(log['level'], 0))
+
+
+print(sort_by_severity(logs))
+
+    
