@@ -259,8 +259,7 @@ def worst_service_ratio(logs_dicts: list[dict]) -> tuple[str, float] | None:
             worst_service = service
 
     return (worst_service, worst_ratio) if worst_service else None
-
-print(worst_service_ratio(logs))
+# print(worst_service_ratio(logs))
 
 
 
@@ -271,6 +270,95 @@ def sort_by_severity(logs_dicts: list[dict]) -> list[dict]:
     return sorted(logs_dicts, key=lambda log: severity_order.get(log['level'], 0))
 
 
-print(sort_by_severity(logs))
+# print(sort_by_severity(logs))
 
+# FUNCTION FOUR    
+def find_by_message(logs_dicts: list[dict], keyword: str) -> list[dict]:
+    keyword = keyword.lower()
+    return [log for log in logs_dicts if keyword in log['message'].lower()]
+# print(find_by_message(logs, "user"))
+
+# FUNCTION FIVE
+def generate_report(logs_dicts: list[dict]) -> str:
+
+    total_entries = len(logs_dicts)    
+    total_errors = sum(1 for log in logs_dicts if log.get('level') == 'ERROR')
+    worst_service_info = worst_service_ratio(logs_dicts)
+    if worst_service_info:
+        worst_service_name = worst_service_info[0]
+        worst_service_ratio_percent = int(worst_service_info[1] * 100)
+    else:
+        worst_service_name = "N/A"
+        worst_service_ratio_percent = 0
     
+    top_service_info = top_service_by_errors(logs_dicts)
+    if top_service_info:
+        top_service_name = top_service_info[0]
+        top_service_errors = top_service_info[1]
+    else:
+        top_service_name = "N/A"
+        top_service_errors = 0
+    
+    report = f"""=== System Report ===
+    Total entries: {total_entries}
+    Total errors: {total_errors}
+    Most problematic service (by ratio): {worst_service_name} ({worst_service_ratio_percent}%)
+    Most errors (by count): {top_service_name} ({top_service_errors} errors)"""
+    
+    return report
+
+data = [
+    {'ts': '2025-10-08T06:41:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'user login ok'},
+    {'ts': '2025-10-08T06:42:00Z', 'service': 'db', 'level': 'ERROR', 'message': 'connection timeout'}, 
+    {'ts': '2025-10-08T06:43:00Z', 'service': 'api', 'level': 'WARN', 'message': 'slow response detected'}, 
+    {'ts': '2025-10-08T06:44:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'new user registered'}, 
+    {'ts': '2025-10-08T06:45:00Z', 'service': 'web', 'level': 'DEBUG', 'message': 'session cookie created'}, 
+    {'ts': '2025-10-08T06:46:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'user logout ok'},
+    {'ts': '2025-10-08T06:47:00Z', 'service': 'db', 'level': 'INFO', 'message': 'query executed successfully'}, 
+    {'ts': '2025-10-08T06:48:00Z', 'service': 'api', 'level': 'ERROR', 'message': 'invalid json format'}, 
+    {'ts': '2025-10-08T06:49:00Z', 'service': 'cache', 'level': 'INFO', 'message': 'cache cleared'},
+    {'ts': '2025-10-08T06:50:00Z', 'service': 'auth', 'level': 'WARN', 'message': 'multiple failed logins'},
+    {'ts': '2025-10-08T06:51:00Z', 'service': 'db', 'level': 'INFO', 'message': 'replica sync complete'}, 
+    {'ts': '2025-10-08T06:52:00Z', 'service': 'api', 'level': 'INFO', 'message': 'endpoint /status called'},
+    {'ts': '2025-10-08T06:53:00Z', 'service': 'web', 'level': 'INFO', 'message': 'homepage rendered'},
+    {'ts': '2025-10-08T06:54:00Z', 'service': 'auth', 'level': 'ERROR', 'message': 'invalid token'},
+    {'ts': '2025-10-08T06:55:00Z', 'service': 'cache', 'level': 'DEBUG', 'message': 'cache hit for user id=23'},
+    {'ts': '2025-10-08T06:56:00Z', 'service': 'db', 'level': 'WARN', 'message': 'slow query detected'},
+    {'ts': '2025-10-08T06:57:00Z', 'service': 'api', 'level': 'INFO', 'message': 'GET /users successful'},
+    {'ts': '2025-10-08T06:58:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'password reset requested'},
+    {'ts': '2025-10-08T06:59:00Z', 'service': 'web', 'level': 'ERROR', 'message': 'missing static resource'},
+    {'ts': '2025-10-08T07:00:00Z', 'service': 'cache', 'level': 'INFO', 'message': 'cache warmup completed'},
+    {'ts': '2025-10-08T07:01:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'user verified via email'},
+    {'ts': '2025-10-08T07:02:00Z', 'service': 'db', 'level': 'INFO', 'message': 'backup completed'},
+    {'ts': '2025-10-08T07:03:00Z', 'service': 'api', 'level': 'WARN', 'message': 'rate limit reached'},
+    {'ts': '2025-10-08T07:04:00Z', 'service': 'auth', 'level': 'DEBUG', 'message': 'JWT token created'},
+    {'ts': '2025-10-08T07:05:00Z', 'service': 'web', 'level': 'INFO', 'message': 'page /profile loaded'},
+    {'ts': '2025-10-08T07:06:00Z', 'service': 'cache', 'level': 'INFO', 'message': 'cache updated for /api/users'},
+    {'ts': '2025-10-08T07:07:00Z', 'service': 'db', 'level': 'ERROR', 'message': 'duplicate key error'},
+    {'ts': '2025-10-08T07:08:00Z', 'service': 'api', 'level': 'INFO', 'message': 'POST /login success'},
+    {'ts': '2025-10-08T07:09:00Z', 'service': 'auth', 'level': 'INFO', 'message': '2FA verified'},
+    {'ts': '2025-10-08T07:10:00Z', 'service': 'web', 'level': 'INFO', 'message': 'assets preloaded'},
+    {'ts': '2025-10-08T07:11:00Z', 'service': 'cache', 'level': 'WARN', 'message': 'cache miss for session id=45'},
+    {'ts': '2025-10-08T07:12:00Z', 'service': 'db', 'level': 'INFO', 'message': 'transaction committed'},
+    {'ts': '2025-10-08T07:13:00Z', 'service': 'api', 'level': 'ERROR', 'message': 'missing authorization header'},
+    {'ts': '2025-10-08T07:14:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'role updated to admin'},
+    {'ts': '2025-10-08T07:15:00Z', 'service': 'web', 'level': 'INFO', 'message': 'logout page rendered'},
+    {'ts': '2025-10-08T07:16:00Z', 'service': 'cache', 'level': 'INFO', 'message': 'cache entry expired'},
+    {'ts': '2025-10-08T07:17:00Z', 'service': 'db', 'level': 'DEBUG', 'message': 'query plan optimized'},
+    {'ts': '2025-10-08T07:18:00Z', 'service': 'api', 'level': 'INFO', 'message': 'PUT /settings success'},
+    {'ts': '2025-10-08T07:19:00Z', 'service': 'auth', 'level': 'WARN', 'message': 'user session expired'},
+    {'ts': '2025-10-08T07:20:00Z', 'service': 'web', 'level': 'INFO', 'message': 'error 404 rendered'},
+    {'ts': '2025-10-08T07:21:00Z', 'service': 'cache', 'level': 'DEBUG', 'message': 'cache cleanup started'},
+    {'ts': '2025-10-08T07:22:00Z', 'service': 'db', 'level': 'INFO', 'message': 'index rebuilt'},
+    {'ts': '2025-10-08T07:23:00Z', 'service': 'api', 'level': 'INFO', 'message': 'DELETE /session ok'},
+    {'ts': '2025-10-08T07:24:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'user deleted'},
+    {'ts': '2025-10-08T07:25:00Z', 'service': 'web', 'level': 'WARN', 'message': 'redirect loop detected'},
+    {'ts': '2025-10-08T07:26:00Z', 'service': 'cache', 'level': 'INFO', 'message': 'cache compression done'},
+    {'ts': '2025-10-08T07:27:00Z', 'service': 'db', 'level': 'INFO', 'message': 'schema migration complete'},
+    {'ts': '2025-10-08T07:28:00Z', 'service': 'api', 'level': 'ERROR', 'message': 'internal server error'},
+    {'ts': '2025-10-08T07:29:00Z', 'service': 'auth', 'level': 'INFO', 'message': 'user login ok'},
+    {'ts': '2025-10-08T07:30:00Z', 'service': 'web', 'level': 'INFO', 'message': 'dashboard loaded'}
+]
+
+
+print(generate_report(data))
