@@ -98,7 +98,7 @@ def top_service_by_errors(log_dicts: list[dict]) -> tuple[str, int] | None:
     max_service = max(obj_services_by_errors, key=obj_services_by_errors.get, default=None)
     return (max_service, obj_services_by_errors[max_service]) if max_service else None
 
-print(top_service_by_errors(logs))
+# print(top_service_by_errors(logs))
 
 
 
@@ -208,9 +208,54 @@ def run_cli(logs_dicts: list[dict]) -> None:
             print("Invalid option. Please choose between 1 and 4.")
 
 
-if __name__ == "__main__":
-    run_cli(logs)
+# if __name__ == "__main__":
+#     run_cli(logs)
 
 
 
 # LEVEL FOUR
+
+# FUNCTION ONE
+def errors_by_service(logs_dicts: list[dict]) -> dict[str, int]:
+    service_errors = {}
+    for log in logs_dicts:
+        if log.get("level") == "ERROR":
+            service = log.get("service")
+            if service not in service_errors:
+                service_errors[service] = 1
+            else:
+                service_errors[service] += 1
+    return service_errors
+
+# print(errors_by_service(logs))
+
+def worst_service_ratio(logs_dicts: list[dict]) -> tuple[str, float] | None:
+    service_totals = {}
+    service_errors = {}
+
+    for log in logs_dicts:
+        service = log.get("service")
+        level = log.get("level")
+
+        if service not in service_totals:
+            service_totals[service] = 0
+            service_errors[service] = 0
+
+        service_totals[service] += 1
+        if level == "ERROR":
+            service_errors[service] += 1
+
+    worst_service = None
+    worst_ratio = -1.0
+
+    for service, total in service_totals.items():
+        errors = service_errors.get(service, 0)
+        ratio = errors / total if total > 0 else 0
+
+        if ratio > worst_ratio:
+            worst_ratio = ratio
+            worst_service = service
+
+    return (worst_service, worst_ratio) if worst_service else None
+print(worst_service_ratio(logs))
+# ➜ ('db', 0.75)  # כלומר 75% מהלוגים של db הם ERROR
