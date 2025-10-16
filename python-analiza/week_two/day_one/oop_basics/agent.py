@@ -1,5 +1,5 @@
 class Agent:
-    def __init__(self, code_name:str , clearance_level : int):
+    def __init__(self, code_name:str , clearance_level : int = 0):
         self.code_name = code_name
         self.__clearance_level = clearance_level
         
