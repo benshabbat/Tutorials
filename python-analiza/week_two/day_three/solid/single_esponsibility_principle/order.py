@@ -21,3 +21,7 @@ class InvoicePrinter:
         for item in order.items:
             print(f"- {item}")
         print(f"Total: ${order.total_price:.2f}")        
+        
+order = Order(["Book", "Pen"], 15.50)
+printer = InvoicePrinter()
+printer.print_invoice(order)        
