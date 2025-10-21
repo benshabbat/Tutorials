@@ -31,12 +31,12 @@
 
 
 # IndentationError: expected an indented block
-counts = {"a":1, "b":2, "c":3}
-for k in counts:
-    if counts[k] % 2 == 1:  
-        del counts[k]
-        print(counts)
-print(counts)
+# counts = {"a":1, "b":2, "c":3}
+# for k in counts:
+#     if counts[k] % 2 == 1:  
+#         del counts[k]
+#         print(counts)
+# print(counts)
 
 # RESULT:
 # counts = {"a":1, "b":2, "c":3}
