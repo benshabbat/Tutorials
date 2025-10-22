@@ -300,3 +300,12 @@
 # for i in range(len(data)):
 #     total += data[i]
 # print("Total:", total)
+
+def sad():
+    count = 5
+    def inner():
+        print(count)
+        count += 1  # UnboundLocalError
+        return count
+    return inner()
+sad()

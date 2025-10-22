@@ -6,7 +6,7 @@ class Payment(ABC):
 
     @abstractmethod
     def pay(self) -> None:
-        print("Processing payment")
+        print(f"Processing payment of ${self.amount:.2f}")
 
 class CreditCardPayment(Payment):
     def pay(self) -> None:
