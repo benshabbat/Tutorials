@@ -18,5 +18,8 @@ class PayPalPayment(Payment):
         
         
 class CryptoPayment(Payment):
+    def __init__(self, amount: float, wallet_address: str) -> None:
+        super().__init__(amount)
+        self.wallet_address = wallet_address
     def pay(self) -> None:
-        print(f"Processing cryptocurrency payment of ${self.amount:.2f}")        
+        print(f"Processing cryptocurrency payment of ${self.amount:.2f} to wallet {self.wallet_address}")        
