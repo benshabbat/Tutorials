@@ -60,7 +60,7 @@ def shots_left(state: dict) -> int:
     return state["max_shots"] - state["shots_used"]
 
 
-def remaining_ships(state: dict) -> :
+def remaining_ships(state: dict) -> int:
     ships = state["ships"]
     shots = state["shots"]
     remaining = 0
