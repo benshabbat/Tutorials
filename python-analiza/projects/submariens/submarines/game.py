@@ -54,3 +54,18 @@ def is_won(state: dict) -> bool:
 
 def is_lost(state: dict) -> bool:
     return state["shots_used"] >= state["max_shots"] and not is_won(state)
+
+
+def shots_left(state: dict) -> int:
+    return state["max_shots"] - state["shots_used"]
+
+
+def remaining_ships(state: dict) -> :
+    ships = state["ships"]
+    shots = state["shots"]
+    remaining = 0
+    for i in range(len(ships)):
+        for j in range(len(ships[i])):
+            if ships[i][j] == 1 and not shots[i][j]:
+                remaining += 1
+    return remaining
