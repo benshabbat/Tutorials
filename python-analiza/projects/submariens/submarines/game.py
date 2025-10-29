@@ -3,8 +3,8 @@ from submarines.placement import place_random_ships
 
 def init_game(size: int, n_ships: int, max_shots: int, *, rng: random.Random | None =
               None) -> dict:
-    if rng is None:
-        rng = random.Random()
+    # if rng is None:
+    #     n_ships = rng.randint(1, size * size // 4)
     ships = [[0 for _ in range(size)] for _ in range(size)]
     shots = [[False for _ in range(size)] for _ in range(size)]
     place_random_ships(ships, n_ships)

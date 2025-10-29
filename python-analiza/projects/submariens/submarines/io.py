@@ -12,6 +12,7 @@ def parse_coords(raw: str, *, one_based: bool = True) -> tuple[int, int] | None:
     except ValueError:
         return None
 
+
     if one_based:
         x -= 1
         y -= 1
