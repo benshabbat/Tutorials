@@ -5,10 +5,12 @@ from agent import Agent
 class AgencyDirector:
     _instance = None
 
-    def __new__(cls):
+    def __new__(cls,name):
         if cls._instance is None:
-            cls._instance = super(AgencyDirector, cls).__new__(cls)
+            cls._instance = super(AgencyDirector, cls).__new__(cls,name)
+            # cls._instance = super().__new__(cls)
             cls._instance.agents = []
+            cls._instance.name = name
         return cls._instance
 
     def add_agent(self, agent):
