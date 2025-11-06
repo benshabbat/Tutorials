@@ -2,11 +2,18 @@ class StrikeOption:
     def __init__(self, name:str,ammo:int):
         self.name = name
         self.ammo = ammo
-        
-    def payoff(self, underlying_price):
-        if self.option_type == 'call':
-            return max(0, underlying_price - self.strike_price)
-        elif self.option_type == 'put':
-            return max(0, self.strike_price - underlying_price)
+    def strike(self):
+        if self.ammo > 0:
+            self.ammo -= 1
+            return f"Strike executed with {self.name}. Remaining ammo: {self.ammo}"
         else:
-            raise ValueError("Invalid option type. Use 'call' or 'put'.")
+            return f"No ammo left for {self.name}!"
+        
+        
+class Tank(StrikeOption):
+    def strike(self):
+        return super().strike() + " Tank shell fired!"  
+    
+class Drone(StrikeOption):
+    def strike(self):
+        return super().strike() + " Drone missile launched!"    
