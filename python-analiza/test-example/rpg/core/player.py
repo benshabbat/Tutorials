@@ -19,7 +19,7 @@ class Player:
         print(f"{self.name} says: Hello! I am a {self.profession}.")
         
     def attack(self, target):
-        target.hp -= self.power
+        target.hp -= self.power + random.randint(1,6)
         if target.hp < 0:
             target.hp = 0
         self.speak()

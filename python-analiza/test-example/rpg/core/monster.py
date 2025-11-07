@@ -24,7 +24,7 @@ class Monster:
 
     def attack(self, target):
         self.power *= 0.5 if self.weapon == "knife" else 1 if self.weapon == "sword" else 1.5 if self.weapon == "axe" else 1
-        target.hp -= self.power
+        target.hp -= self.power + random.randint(1,6)
         if target.hp < 0:
             target.hp = 0
         self.speak()
