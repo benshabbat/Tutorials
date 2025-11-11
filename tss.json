@@ -1,0 +1,54 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "הארי פוטר ואבן החכמים",
+      "author": "ג'יי קיי רולינג",
+      "year": 1997,
+      "genre": "פנטזיה",
+      "pages": 223,
+      "price": 89.90,
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "title": "שר הטבעות",
+      "author": "ג'יי.אר.אר. טולקין",
+      "year": 1954,
+      "genre": "פנטזיה",
+      "pages": 1178,
+      "price": 129.90,
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "ג'ורג' אורוול",
+      "year": 1949,
+      "genre": "דיסטופיה",
+      "pages": 328,
+      "price": 69.90,
+      "inStock": false
+    },
+    {
+      "id": 4,
+      "title": "הנסיך הקטן",
+      "author": "אנטואן דה סנט-אכזופרי",
+      "year": 1943,
+      "genre": "ילדים",
+      "pages": 96,
+      "price": 49.90,
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "title": "מאה שנות בדידות",
+      "author": "גבריאל גרסיה מרקס",
+      "year": 1967,
+      "genre": "ריאליזם קסום",
+      "pages": 417,
+      "price": 99.90,
+      "inStock": true
+    }
+  ]
+}
