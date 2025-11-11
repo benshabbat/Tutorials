@@ -1,21 +1,15 @@
-from pydantic import BaseModel
+from string_ops import reverse_string, uppercase_string, remove_vowels, remove_every_third, letter_counts
+import asyncio
 
-app = FastAPI()
 
-# הגדרת מודל ל-request body
-class Item(BaseModel):
-    name: str
-    price: float
-    description: str = None  # שדה אופציונלי
+async def main():
+    print(await reverse_string("Hello, World!"))
+    print(await uppercase_string("Hello, World!"))
+    print(await remove_vowels("This is an example."))
+    print(await remove_every_third("This is an example."))
+    print(await letter_counts("This is an example."))
 
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
 
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
-
-@app.post("/items/")
-async def create_item(item: Item):
-    return {"item_name": item.name, "item_price": item.price, "item_description": item.description}
+if __name__ == "__main__":
+    asyncio.run(main())
+    
