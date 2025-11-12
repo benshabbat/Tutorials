@@ -10,7 +10,7 @@ app = FastAPI()
 async def reverse_string(s: str):
     return {"original": s, "reversed_text": s[::-1]}
 
-@app.get("/fraturs//uppercase/{text}")
+@app.get("/fraturs/uppercase/{text}")
 async def uppercase_string(text: str):
     return {"original": text, "uppercased": text.upper()}
 
