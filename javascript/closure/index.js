@@ -44,8 +44,16 @@ const counter = createCounter();
 counter.increment();
 counter.increment();
 counter.increment();
+// const {increment,getCount} = createCounter();
+// increment()
+// increment()
+// increment()
+// increment()
+
 
 console.log(`Current count: ${counter.getCount()}`);
+
+
 
 // ---------- EXAMPLE 3 ----------
 
