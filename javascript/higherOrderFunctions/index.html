@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Functions - מדריך למתחילים</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .code-container {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            direction: ltr;
+        }
+        .output {
+            background-color: #fff;
+            border: 2px solid #3498db;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .explanation {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-right: 4px solid #3498db;
+            margin: 15px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .step {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Higher Order Functions - מדריך צעד אחר צעד</h1>
+
+    <div class="step">
+        <h2>מה זה Higher Order Function?</h2>
+        <div class="explanation">
+            <strong>Higher Order Function (HOF)</strong> היא פונקציה שעושה אחד מהדברים הבאים:
+            <ul>
+                <li>מקבלת פונקציה אחרת כפרמטר</li>
+                <li>מחזירה פונקציה</li>
+                <li>או שניהם!</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 1: הבנת הבסיס - פונקציות כערכים</h2>
+        <div class="explanation">
+            ב-JavaScript, פונקציות הן "אזרחים ממדרגה ראשונה" - כלומר ניתן להתייחס אליהן כמו לכל משתנה אחר.
+        </div>
+        <button onclick="step1()">הרץ דוגמה 1</button>
+        <div id="output1" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 2: פונקציה שמקבלת פונקציה אחרת</h2>
+        <div class="explanation">
+            זו הדוגמה הפשוטה ביותר ל-HOF - פונקציה שמקבלת פונקציה אחרת ומריצה אותה.
+        </div>
+        <button onclick="step2()">הרץ דוגמה 2</button>
+        <div id="output2" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 3: Array.forEach() - ה-HOF הראשון שלך</h2>
+        <div class="explanation">
+            <code>forEach()</code> היא HOF מובנית שעוברת על כל איבר במערך ומפעילה עליו פונקציה.
+        </div>
+        <button onclick="step3()">הרץ דוגמה 3</button>
+        <div id="output3" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 4: Array.map() - יצירת מערך חדש</h2>
+        <div class="explanation">
+            <code>map()</code> עוברת על כל איבר, מפעילה עליו פונקציה, ומחזירה מערך חדש עם התוצאות.
+        </div>
+        <button onclick="step4()">הרץ דוגמה 4</button>
+        <div id="output4" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 5: Array.filter() - סינון מערך</h2>
+        <div class="explanation">
+            <code>filter()</code> מחזירה מערך חדש שמכיל רק איברים שעומדים בתנאי מסוים.
+        </div>
+        <button onclick="step5()">הרץ דוגמה 5</button>
+        <div id="output5" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 6: Array.reduce() - צמצום לערך אחד</h2>
+        <div class="explanation">
+            <code>reduce()</code> "מצמצמת" את כל איברי המערך לערך יחיד.
+        </div>
+        <button onclick="step6()">הרץ דוגמה 6</button>
+        <div id="output6" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 7: שרשור פעולות (Chaining)</h2>
+        <div class="explanation">
+            אפשר לשלב מספר HOFs ביחד לפעולות מורכבות!
+        </div>
+        <button onclick="step7()">הרץ דוגמה 7</button>
+        <div id="output7" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 8: פונקציה שמחזירה פונקציה</h2>
+        <div class="explanation">
+            HOF יכולה גם להחזיר פונקציה חדשה - שימושי ליצירת פונקציות מותאמות אישית!
+        </div>
+        <button onclick="step8()">הרץ דוגמה 8</button>
+        <div id="output8" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 9: דוגמה מעשית - עיבוד רשימת סטודנטים</h2>
+        <div class="explanation">
+            נשלב את כל מה שלמדנו במשימה אמיתית!
+        </div>
+        <button onclick="step9()">הרץ דוגמה 9</button>
+        <div id="output9" class="output"></div>
+    </div>
+
+    <div class="step">
+        <h2>שלב 10: תרגול עצמאי</h2>
+        <div class="explanation">
+            נסה לפתור את התרגילים הבאים בעצמך!
+        </div>
+        <button onclick="step10()">הצג תרגילים</button>
+        <div id="output10" class="output"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
